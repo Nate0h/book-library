@@ -3,3 +3,25 @@
     font-size: 15px;
 
 }
+
+input, label {
+    display:block;
+}
+
+.removeBook{
+font-size: 15px;
+}
+
+.toggle-read{
+    font-size: 15px;
+}
+
+.read{
+    font-size: 15px;
+    color: green;
+}
+
+.unread{
+    font-size: 15px;
+    color: red;
+}
