@@ -1,27 +1,236 @@
-.card{
-    border:1px solid red;
-    font-size: 15px;
-
+:root{
+--blue: rgb(38, 128, 206);
+--red: rgba(229, 84, 35, 0.929);
+--cream: rgba(242, 228, 208, 0.929);
 }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: var(--blue);
+}
+
+@font-face {
+    font-family: my-cool-font;
+    src: url(../fonts/LmsEgyptianBookends-lKw0.ttf);
+  }
+  @font-face {
+    font-family: other-cool-font;
+    src: url(../fonts/LibraryRecordsRegular-qZW66.ttf);
+  }
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue);
+}
+
+.header{
+    font-family: my-cool-font, sans-serif;
+    background-color: var(--red);
+    color: bisque;
+    font-size: larger;
+    padding-left: 20px;
+    align-content: center;
+    
+}
+
+.book-container{
+    display: grid;
+    overflow: auto;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, 300px);
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 15px;
+    background-color: ORANGE;
+}
+
+.book-container > div {
+    background: #fff;
+    font-family: Montserrat, sans-serif;;
+    font-size: 18px;
+    width: 250px;
+    line-height: 20x;
+    font-weight: bold;
+    color: #009688;
+    padding: 20px;
+    box-shadow:
+        inset #009688 0 0 0 5px, 
+      inset #059c8e 0 0 0 1px, 
+      inset #0cab9c 0 0 0 10px, 
+      inset #1fbdae 0 0 0 11px, 
+      inset #8ce9ff 0 0 0 16px, 
+      inset #48e4d6 0 0 0 17px, 
+      inset #e5f9f7 0 0 0 21px, 
+      inset #bfecf7 0 0 0 22px;
+    text-shadow: 3px 3px 1px #bfecf7;
+    border-radius: 12%;
+}
+
+.footer{
+    background-color: var(--red);
+}
+.card{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+
+
 
 input, label {
     display:block;
 }
 
-.removeBook{
-font-size: 15px;
-}
 
 .toggle-read{
     font-size: 15px;
+    
 }
 
 .read{
-    font-size: 15px;
-    color: green;
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    vertical-align: middle;
+    border: 1px solid;
+    border-radius: 6px;
+    color: #ffffff;
+    background-color: #2ea44f;
+    border-color: #1b1f2326;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
+
+}
+.read:hover{                  
+background-color: #2c974b;
+border-color: #1b1f2326;
+transition-duration: 0.1s;
+                    
+                
 }
 
 .unread{
-    font-size: 15px;
-    color: red;
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    vertical-align: middle;
+    border: 1px solid;
+    border-radius: 6px;
+    color: #ffffff;
+    background-color: var(--red);
+    border-color: #1b1f2326;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
+}
+
+.unread:hover{                  
+    background-color: red;
+    border-color: #1b1f2326;
+    transition-duration: 0.1s;
+                                    
+    }
+
+.removeBook{
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    vertical-align: middle;
+    border: 1px solid;
+    border-radius: 6px;
+    color: #ffffff;
+    background-color: var(--blue);
+    border-color: #1b1f2326;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    transition-property: color, background-color, border-color;
+    }
+
+    .removeBook:hover{                  
+        background-color: blue;
+        border-color: #1b1f2326;
+        transition-duration: 0.1s;
+        
+    }
+
+    .show-modal {
+        margin-left: 45%;
+        margin-top: 15px;
+        box-shadow:inset 0px 1px 0px 0px #f9eca0;
+        background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+        background-color:#f0c911;
+        border-radius:6px;
+        border:1px solid #e65f44;
+        display:inline-block;
+        cursor:pointer;
+        color:#c92200;
+        font-family:Arial;
+        font-size:20px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ded17c;
+    }
+    .show-modal:hover {
+        background:linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+        background-color:#f2ab1e;
+    }
+    .show-modal:active {
+        position:relative;
+        top:1px;
+    }
+
+    .clear-all{
+
+        display: inline-block;
+        outline: 0;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 4px;
+        font-size: 13px;
+        height: 30px;
+        background-color: var(--cream);
+        color: #0e0e10;
+        padding: 0 20px;
+        margin-bottom: 5px;
+    }
+    .clear:hover {
+        background-color: #0000001a;
+    }
+
+    .created-by{
+        font-family: other-cool-font, sans-serif;
+        color: bisque;
+        padding-left: 10px;
+        font-size: 18px;
+
+    }
+img{
+    height: 150px;
+    width: 150px;
+    border-radius: 12%;
+    border: 2px solid black;
 }
